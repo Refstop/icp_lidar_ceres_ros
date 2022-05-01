@@ -97,8 +97,8 @@ void icp_lidar_ceres_ros::knn_kdtree(const MatrixXd reference_points, const Matr
     kdtree.query(points_to_be_aligned, 1, indices_, distances_);
 }
 
-MatrixXd icp_lidar_ceres_ros::icp_non_linear(const MatrixXd& reference_points, const MatrixXd& points, int max_iterations, double distance_threshold, double convergence_translation_threshold,
-        double convergence_rotation_threshold, int point_pairs_threshold, bool verbose) {
+MatrixXd icp_lidar_ceres_ros::icp_non_linear(const MatrixXd& reference_points, const MatrixXd& points, int max_iterations, double distance_threshold,
+        int point_pairs_threshold, bool verbose) {
     std::vector<Vector2d> normals = compute_normals_(reference_points);
     double x[3] = {0,};
     MatrixXd result_points = points;

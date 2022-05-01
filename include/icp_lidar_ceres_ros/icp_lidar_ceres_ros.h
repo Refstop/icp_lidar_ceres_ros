@@ -34,8 +34,8 @@ class icp_lidar_ceres_ros {
     void Scan2Callback(const sensor_msgs::LaserScan::ConstPtr& msg); // points_to_be_aligned
     void knn_kdtree(const MatrixXd reference_points, const MatrixXd points_to_be_aligned);
     // point to plane icp
-    MatrixXd icp_non_linear(const MatrixXd& reference_points, const MatrixXd& points, int max_iterations = 10, double distance_threshold = 0.3, double convergence_translation_threshold=1e9,
-        double convergence_rotation_threshold=1e9, int point_pairs_threshold=8, bool verbose=true);
+    MatrixXd icp_non_linear(const MatrixXd& reference_points, const MatrixXd& points, int max_iterations = 10, double distance_threshold = 0.3,
+        int point_pairs_threshold=8, bool verbose=true);
     void run();
 
     private:
